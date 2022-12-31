@@ -44,10 +44,8 @@ __attribute__((always_inline)) static inline void uc1698_Write_Data(u8 Data)
 /*****  LCD初始化函数    ******/
 void uc1698_init(void)
 {
-    UC1698_POWER_ON();           //打开屏幕电源
-
-    DelayMs(200);
-
+    uc1698_bsp_init();
+    
     nRST = 0;
 
     DelayMs(200);
